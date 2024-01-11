@@ -5,29 +5,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;300&display=swap" rel="stylesheet">
   <title>Anissa Nishioka Personal Site</title>
 </head>
 
 <body>
   <header>
-    <nav>
-      <h1>Anissa Nishioka</h1>
-      <ul>
-        <li><a href="#sect_home">Home</a></li>
-        <li><a href="#sect_about">About</a></li>
-        <li><a href="#sect_contact">Contact</a></li>
+    <nav id="site-nav">
+      <h1 id="site-title">Anissa Nishioka</h1>
+      <ul id="nav-links">
+        <li class="nav-link inline"><a class="no-deco" href="#home">Home</a></li>
+        <li class="nav-link inline"><a class="no-deco" href="#about">About</a></li>
+        <li class="nav-link inline"><a class="no-deco" href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
   <main>
-    <section id="sect_home"><img src="assets/home.jpg" alt=""></section>
-    <section id="sect_about">
-      <h2>Aspiring software engineer.</h2>
+    <section id="home"><img src="" alt="">Landing area</section>
+    <section id="about">
+      <h2 class="sect-title">Aspiring software engineer.</h2>
       <p>Current: based in Southern California and attending Rithm School.</p>
-      <p>Previous: <a href="#">resume</a> </p>
+      <p>Previous: <a href="#">resume</a>.</p>
     </section>
-    <section id="sect_contact">
+    <section id="contact">
       <p>Available via <a href="mailto:ani.nishiokoa@gmail.com">email</a>.</p>
+      <p>Check out my work <a href="https://github.com/aninishioka">here</a>.</p>
     </section>
   </main>
 
