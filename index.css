@@ -1,12 +1,14 @@
 :root {
   --primary-color: black;
   --primary-color-bg: white;
+  --link-color: #47aac6;
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  line-height: 1.5em;
 }
 
 html {
@@ -22,6 +24,15 @@ body {
 
 a {
   color: var(--primary-color);
+  transition: .25s;
+  -webkit-transition: .25s;
+  -moz-transition: .25s;
+  -ms-transition: .25s;
+  -o-transition: .25s;
+}
+
+a:hover {
+  color: var(--link-color);
 }
 
 .inline {
@@ -45,11 +56,15 @@ header {
   background-color: var(--primary-color-bg);
 }
 
-.nav-link>a {
+.nav-link {
   text-transform: uppercase;
   text-decoration: none;
   font-weight: 300;
   font-size: 1.2em;
+}
+
+.active-link {
+  color: var(--link-color);
 }
 
 #site-title {
@@ -64,7 +79,7 @@ header {
 }
 
 main {
-  margin-top: 4em;
+  padding-top: 4em;
 }
 
 section {
@@ -73,8 +88,19 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 3em;
 }
 
 .sect-title {
   margin-bottom: 1em;
+}
+
+#home {
+  padding: 0 3em;
+  flex-direction: row;
+  gap: 10em;
+}
+
+#landing-img {
+  height: calc((100vh - 4em)*.75);
 }
