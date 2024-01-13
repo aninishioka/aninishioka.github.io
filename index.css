@@ -10,6 +10,8 @@
   margin: 0;
   padding: 0;
   line-height: 1.5rem;
+  letter-spacing: .12em;
+  word-spacing: .16em;
 }
 
 html {
@@ -74,10 +76,6 @@ header {
 #site-title {
   text-transform: uppercase;
   font-size: 1.8rem;
-}
-
-#site-title>a {
-  pointer-events: none;
   cursor: default;
 }
 
@@ -100,40 +98,37 @@ section {
 }
 
 .sect-title {
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .sect-text {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  gap: 1rem;
+  gap: 2rem;
   max-width: 100%;
 }
 
 #home {
   background-image: url('assets/landing.jpg');
-  background-position: center
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
-#landing-img {
-  display: none;
 
+#contact-text {
+  align-items: center;
+}
+
+.links-wrap {
+  display: flex;
+  gap: 32px;
 }
 
 @media screen and (min-width: 48rem) {
   :root {
     --nav-height: 4em;
-  }
-
-  #site-title>a {
-    pointer-events: all;
-    cursor: pointer;
-  }
-
-  #site-title>a:hover {
-    color: var(--primary-color);
   }
 
   #site-nav {
@@ -142,17 +137,5 @@ section {
 
   .sect-text {
     width: 80%;
-  }
-
-  #home {
-    flex-direction: row;
-    gap: 32px;
-    background-image: none;
-    justify-content: center;
-  }
-
-  #landing-img {
-    display: block;
-    height: calc((100vh - var(--nav-height))*.75);
   }
 }
