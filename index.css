@@ -58,9 +58,12 @@ header {
 
 .nav-link {
   text-transform: uppercase;
-  text-decoration: none;
   font-weight: 300;
   font-size: 1.2em;
+}
+
+.no-deco {
+  text-decoration: none;
 }
 
 .active {
@@ -71,6 +74,10 @@ header {
   text-transform: uppercase;
   font-weight: 200;
   font-size: 1.8em;
+}
+
+#site-title>a:hover {
+  color: var(--primary-color);
 }
 
 #nav-links {
