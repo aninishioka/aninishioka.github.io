@@ -63,7 +63,7 @@ header {
   font-size: 1.2em;
 }
 
-.active-link {
+.active {
   color: var(--link-color);
 }
 
@@ -88,17 +88,25 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 3em;
+  padding: 0 10em;
 }
 
 .sect-title {
-  margin-bottom: 1em;
+  margin-bottom: 1.5em;
+}
+
+.sect-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
 }
 
 #home {
   padding: 0 3em;
   flex-direction: row;
-  gap: 10em;
+  gap: 6em;
 }
 
 #landing-img {
