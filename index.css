@@ -58,7 +58,6 @@ header {
 
 .nav-link {
   text-transform: uppercase;
-  font-weight: 300;
   font-size: 1.2em;
 }
 
@@ -72,7 +71,6 @@ header {
 
 #site-title {
   text-transform: uppercase;
-  font-weight: 200;
   font-size: 1.8em;
 }
 
