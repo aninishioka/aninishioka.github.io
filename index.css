@@ -2,22 +2,24 @@
   --primary-color: black;
   --primary-color-bg: white;
   --link-color: #47aac6;
+  --nav-height: 6rem;
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  line-height: 1.5em;
+  line-height: 1.5rem;
 }
 
 html {
-  scroll-padding-top: 4em;
+  scroll-padding-top: var(--nav-height);
 }
 
 body {
   font-family: 'Roboto Mono', monospace;
   min-height: 100%;
+  max-width: 1440px;
   color: var(--primary-color);
   background-color: var(--primary-color-bg);
 }
@@ -44,21 +46,21 @@ header {
   top: 0;
   left: 0;
   right: 0;
-
 }
 
 #site-nav {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 4em;
-  padding: 0 2em;
+  height: var(--nav-height);
+  padding: 16px 32px;
   background-color: var(--primary-color-bg);
 }
 
 .nav-link {
   text-transform: uppercase;
-  font-size: 1.2em;
+  font-size: 1.2rem;
 }
 
 .no-deco {
@@ -71,33 +73,34 @@ header {
 
 #site-title {
   text-transform: uppercase;
-  font-size: 1.8em;
+  font-size: 1.8rem;
 }
 
-#site-title>a:hover {
-  color: var(--primary-color);
+#site-title>a {
+  pointer-events: none;
+  cursor: default;
 }
 
 #nav-links {
   display: flex;
-  gap: 2em;
+  gap: 32px;
 }
 
 main {
-  padding-top: 4em;
+  padding-top: var(--nav-height);
 }
 
 section {
-  min-height: calc(100vh - 4em);
+  min-height: calc(100vh - var(--nav-height));
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0 10em;
+  padding: 32px;
 }
 
 .sect-title {
-  margin-bottom: 1.5em;
+  margin-bottom: 1.5rem;
 }
 
 .sect-text {
@@ -105,15 +108,51 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1em;
+  gap: 1rem;
+  max-width: 100%;
 }
 
 #home {
-  padding: 0 3em;
-  flex-direction: row;
-  gap: 6em;
+  background-image: url('assets/landing.jpg');
+  background-position: center
 }
 
 #landing-img {
-  height: calc((100vh - 4em)*.75);
+  display: none;
+
+}
+
+@media screen and (min-width: 48rem) {
+  :root {
+    --nav-height: 4em;
+  }
+
+  #site-title>a {
+    pointer-events: all;
+    cursor: pointer;
+  }
+
+  #site-title>a:hover {
+    color: var(--primary-color);
+  }
+
+  #site-nav {
+    flex-direction: row;
+  }
+
+  .sect-text {
+    width: 80%;
+  }
+
+  #home {
+    flex-direction: row;
+    gap: 32px;
+    background-image: none;
+    justify-content: center;
+  }
+
+  #landing-img {
+    display: block;
+    height: calc((100vh - var(--nav-height))*.75);
+  }
 }
