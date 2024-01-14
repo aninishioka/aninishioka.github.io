@@ -14,6 +14,7 @@ function getCurrentSectionLink() {
   }
 }
 
+//check if element is in view
 function elemInView(elem) {
   const offset = document.getElementById('site-nav').offsetHeight;
   let vh = window.innerHeight;
@@ -33,6 +34,29 @@ function highlightCurrentSection() {
 
   //add active class to current section link
   curLink.classList.add('active');
+
+  //set scrollThrottling to false so can call func on next scroll event
+  scrollThrottling = false;
 }
 
-window.addEventListener('scroll', highlightCurrentSection);
+//function throttler based on https://chiamakaikeanyi.dev/event-debouncing-and-throttling-in-javascript/
+function throttle(func, limit) {
+  let lastCall;
+  let lastRan;
+  return () => {
+    if (!lastRan) {
+      func();
+      lastRan = Date.now();
+    } else {
+      clearTimeout(lastCall);
+      lastCall = setTimeout(() => {
+        if (Date.now() - lastRan >= limit) {
+          func();
+          lastRan = Date.now();
+        }
+      }, limit - (Date.now() - lastRan));
+    }
+  };
+}
+
+window.addEventListener('scroll', throttle(highlightCurrentSection, 16));
