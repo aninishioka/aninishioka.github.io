@@ -21,7 +21,7 @@ function elemInView(elem) {
   let rect = elem.getBoundingClientRect();
   let top = rect.top - offset;
   let bottom = rect.bottom - offset;
-  return ((top >= 0 && top <= .5 * vh) || (bottom <= vh && bottom > .5 * vh) || (top <= 0 && bottom >= vh));
+  return ((top <= .5 * vh && bottom > vh * .5));
 }
 
 // highlight link for section user is currently viewing
